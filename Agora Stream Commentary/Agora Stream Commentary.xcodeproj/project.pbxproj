@@ -20,6 +20,9 @@
 		2882699B2993019500E2867C /* VQA in Frameworks */ = {isa = PBXBuildFile; productRef = 2882699A2993019500E2867C /* VQA */; };
 		2882699D2993019500E2867C /* VirtualBackground in Frameworks */ = {isa = PBXBuildFile; productRef = 2882699C2993019500E2867C /* VirtualBackground */; };
 		288269A0299301E600E2867C /* RTCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2882699F299301E600E2867C /* RTCManager.swift */; };
+		288269A3299305E800E2867C /* JoinChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A2299305E800E2867C /* JoinChannelView.swift */; };
+		288269A529930A3A00E2867C /* CommentaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A429930A3A00E2867C /* CommentaryView.swift */; };
+		288269A729930B7800E2867C /* String+Agora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A629930B7800E2867C /* String+Agora.swift */; };
 		28BB588D2992F8060072A066 /* Agora_Stream_CommentaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */; };
 		28BB588F2992F8060072A066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB588E2992F8060072A066 /* ContentView.swift */; };
 		28BB58912992F8070072A066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BB58902992F8070072A066 /* Assets.xcassets */; };
@@ -28,6 +31,10 @@
 
 /* Begin PBXFileReference section */
 		2882699F299301E600E2867C /* RTCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTCManager.swift; sourceTree = "<group>"; };
+		288269A2299305E800E2867C /* JoinChannelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinChannelView.swift; sourceTree = "<group>"; };
+		288269A429930A3A00E2867C /* CommentaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentaryView.swift; sourceTree = "<group>"; };
+		288269A629930B7800E2867C /* String+Agora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Agora.swift"; sourceTree = "<group>"; };
+		288269A829930C9F00E2867C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		28BB58892992F8060072A066 /* Agora Stream Commentary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora Stream Commentary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agora_Stream_CommentaryApp.swift; sourceTree = "<group>"; };
 		28BB588E2992F8060072A066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -90,6 +97,10 @@
 				28BB588E2992F8060072A066 /* ContentView.swift */,
 				28BB58902992F8070072A066 /* Assets.xcassets */,
 				28BB58922992F8070072A066 /* Preview Content */,
+				288269A2299305E800E2867C /* JoinChannelView.swift */,
+				288269A429930A3A00E2867C /* CommentaryView.swift */,
+				288269A629930B7800E2867C /* String+Agora.swift */,
+				288269A829930C9F00E2867C /* Config.xcconfig */,
 			);
 			path = "Agora Stream Commentary";
 			sourceTree = "<group>";
@@ -189,6 +200,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288269A3299305E800E2867C /* JoinChannelView.swift in Sources */,
+				288269A729930B7800E2867C /* String+Agora.swift in Sources */,
+				288269A529930A3A00E2867C /* CommentaryView.swift in Sources */,
 				28BB588F2992F8060072A066 /* ContentView.swift in Sources */,
 				288269A0299301E600E2867C /* RTCManager.swift in Sources */,
 				28BB588D2992F8060072A066 /* Agora_Stream_CommentaryApp.swift in Sources */,
