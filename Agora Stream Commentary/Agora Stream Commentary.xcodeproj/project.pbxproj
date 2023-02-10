@@ -23,6 +23,13 @@
 		288269A3299305E800E2867C /* JoinChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A2299305E800E2867C /* JoinChannelView.swift */; };
 		288269A529930A3A00E2867C /* CommentaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A429930A3A00E2867C /* CommentaryView.swift */; };
 		288269A729930B7800E2867C /* String+Agora.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A629930B7800E2867C /* String+Agora.swift */; };
+		288269AA2994635A00E2867C /* CommentationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269A92994635A00E2867C /* CommentationView.swift */; };
+		288269AC2994637600E2867C /* RTMPSetupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269AB2994637600E2867C /* RTMPSetupView.swift */; };
+		288269AF299598E700E2867C /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 288269AE299598E700E2867C /* Logging */; };
+		288269B1299598FB00E2867C /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269B0299598FB00E2867C /* Logging.swift */; };
+		288269B52995C18500E2867C /* RTMPMediaPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269B42995C18500E2867C /* RTMPMediaPlayer.swift */; };
+		288269B72996BD3B00E2867C /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269B62996BD3B00E2867C /* Config.swift */; };
+		288269B92996CC7B00E2867C /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288269B82996CC7B00E2867C /* Graph.swift */; };
 		28BB588D2992F8060072A066 /* Agora_Stream_CommentaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */; };
 		28BB588F2992F8060072A066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB588E2992F8060072A066 /* ContentView.swift */; };
 		28BB58912992F8070072A066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BB58902992F8070072A066 /* Assets.xcassets */; };
@@ -35,6 +42,13 @@
 		288269A429930A3A00E2867C /* CommentaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentaryView.swift; sourceTree = "<group>"; };
 		288269A629930B7800E2867C /* String+Agora.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Agora.swift"; sourceTree = "<group>"; };
 		288269A829930C9F00E2867C /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		288269A92994635A00E2867C /* CommentationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentationView.swift; sourceTree = "<group>"; };
+		288269AB2994637600E2867C /* RTMPSetupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTMPSetupView.swift; sourceTree = "<group>"; };
+		288269B0299598FB00E2867C /* Logging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logging.swift; sourceTree = "<group>"; };
+		288269B42995C18500E2867C /* RTMPMediaPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RTMPMediaPlayer.swift; sourceTree = "<group>"; };
+		288269B62996BD3B00E2867C /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		288269B82996CC7B00E2867C /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		288269BA2996CED900E2867C /* Agora-Stream-Commentary-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Agora-Stream-Commentary-Info.plist"; sourceTree = SOURCE_ROOT; };
 		28BB58892992F8060072A066 /* Agora Stream Commentary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Agora Stream Commentary.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agora_Stream_CommentaryApp.swift; sourceTree = "<group>"; };
 		28BB588E2992F8060072A066 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +70,7 @@
 				288269952993019500E2867C /* RtcBasic in Frameworks */,
 				2882698F2993019500E2867C /* ContentInspect in Frameworks */,
 				2882699D2993019500E2867C /* VirtualBackground in Frameworks */,
+				288269AF299598E700E2867C /* Logging in Frameworks */,
 				288269872993019500E2867C /* AIAEC in Frameworks */,
 				2882698D2993019500E2867C /* ClearVision in Frameworks */,
 				288269892993019500E2867C /* AINS in Frameworks */,
@@ -71,6 +86,27 @@
 				2882699F299301E600E2867C /* RTCManager.swift */,
 			);
 			path = RTC;
+			sourceTree = "<group>";
+		};
+		288269B22995C14500E2867C /* app */ = {
+			isa = PBXGroup;
+			children = (
+				288269B62996BD3B00E2867C /* Config.swift */,
+				288269B82996CC7B00E2867C /* Graph.swift */,
+				28BB588E2992F8060072A066 /* ContentView.swift */,
+				288269B0299598FB00E2867C /* Logging.swift */,
+				28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		288269B32995C16F00E2867C /* rtmp */ = {
+			isa = PBXGroup;
+			children = (
+				288269AB2994637600E2867C /* RTMPSetupView.swift */,
+				288269B42995C18500E2867C /* RTMPMediaPlayer.swift */,
+			);
+			path = rtmp;
 			sourceTree = "<group>";
 		};
 		28BB58802992F8050072A066 = {
@@ -92,15 +128,17 @@
 		28BB588B2992F8060072A066 /* Agora Stream Commentary */ = {
 			isa = PBXGroup;
 			children = (
+				288269BA2996CED900E2867C /* Agora-Stream-Commentary-Info.plist */,
+				288269B32995C16F00E2867C /* rtmp */,
 				2882699E299301C600E2867C /* RTC */,
-				28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */,
-				28BB588E2992F8060072A066 /* ContentView.swift */,
+				288269B22995C14500E2867C /* app */,
 				28BB58902992F8070072A066 /* Assets.xcassets */,
 				28BB58922992F8070072A066 /* Preview Content */,
 				288269A2299305E800E2867C /* JoinChannelView.swift */,
 				288269A429930A3A00E2867C /* CommentaryView.swift */,
 				288269A629930B7800E2867C /* String+Agora.swift */,
 				288269A829930C9F00E2867C /* Config.xcconfig */,
+				288269A92994635A00E2867C /* CommentationView.swift */,
 			);
 			path = "Agora Stream Commentary";
 			sourceTree = "<group>";
@@ -142,6 +180,7 @@
 				288269982993019500E2867C /* SuperResolution */,
 				2882699A2993019500E2867C /* VQA */,
 				2882699C2993019500E2867C /* VirtualBackground */,
+				288269AE299598E700E2867C /* Logging */,
 			);
 			productName = "Agora Stream Commentary";
 			productReference = 28BB58892992F8060072A066 /* Agora Stream Commentary.app */;
@@ -173,6 +212,7 @@
 			mainGroup = 28BB58802992F8050072A066;
 			packageReferences = (
 				288269852993019500E2867C /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
+				288269AD299598E700E2867C /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 28BB588A2992F8060072A066 /* Products */;
 			projectDirPath = "";
@@ -200,11 +240,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				288269B92996CC7B00E2867C /* Graph.swift in Sources */,
 				288269A3299305E800E2867C /* JoinChannelView.swift in Sources */,
+				288269B52995C18500E2867C /* RTMPMediaPlayer.swift in Sources */,
 				288269A729930B7800E2867C /* String+Agora.swift in Sources */,
+				288269AA2994635A00E2867C /* CommentationView.swift in Sources */,
+				288269B72996BD3B00E2867C /* Config.swift in Sources */,
 				288269A529930A3A00E2867C /* CommentaryView.swift in Sources */,
 				28BB588F2992F8060072A066 /* ContentView.swift in Sources */,
+				288269AC2994637600E2867C /* RTMPSetupView.swift in Sources */,
 				288269A0299301E600E2867C /* RTCManager.swift in Sources */,
+				288269B1299598FB00E2867C /* Logging.swift in Sources */,
 				28BB588D2992F8060072A066 /* Agora_Stream_CommentaryApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +260,7 @@
 /* Begin XCBuildConfiguration section */
 		28BB58952992F8070072A066 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288269A829930C9F00E2867C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -274,6 +321,7 @@
 		};
 		28BB58962992F8070072A066 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288269A829930C9F00E2867C /* Config.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -328,6 +376,7 @@
 		};
 		28BB58982992F8070072A066 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288269A829930C9F00E2867C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -337,6 +386,7 @@
 				DEVELOPMENT_TEAM = AZ59WCD7SF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Agora-Stream-Commentary-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -357,6 +407,7 @@
 		};
 		28BB58992992F8070072A066 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 288269A829930C9F00E2867C /* Config.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -366,6 +417,7 @@
 				DEVELOPMENT_TEAM = AZ59WCD7SF;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Agora-Stream-Commentary-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -414,6 +466,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 4.1.0;
+			};
+		};
+		288269AD299598E700E2867C /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "git@github.com:apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -478,6 +538,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 288269852993019500E2867C /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
 			productName = VirtualBackground;
+		};
+		288269AE299598E700E2867C /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 288269AD299598E700E2867C /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

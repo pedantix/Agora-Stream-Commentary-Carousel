@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct Agora_Stream_CommentaryApp: App {
-    @StateObject private var rtcM = RTCManager()
+    @StateObject private var graph = Graph()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(rtcM)
+                .environmentObject(graph.rtcManager)
+                .environmentObject(graph.rtmpMediaPlayer)
         }
     }
 }

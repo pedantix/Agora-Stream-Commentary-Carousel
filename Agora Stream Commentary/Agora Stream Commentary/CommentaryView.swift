@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct CommentaryView: View {
+    // This is a placeholder for a future value
+    @State private var isRTMPFeedActive = false
+    
     var body: some View {
-        Text("Connect to an RTMP stream OR start commenting")
+        if isRTMPFeedActive {
+            CommentationView()
+        } else {
+            RTMPSetupView()
+        }
     }
 }
 
