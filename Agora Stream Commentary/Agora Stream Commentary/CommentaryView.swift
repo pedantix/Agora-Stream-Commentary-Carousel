@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct CommentaryView: View {
+    // This is a placeholder for a future value
+    @EnvironmentObject private var rtcManager: RTCManager
+    
     var body: some View {
-        Text("Connect to an RTMP stream OR start commenting")
+        if rtcManager.mediaPlayPresentInChannel {
+            CommentationView()
+        } else {
+            RTMPSetupView()
+        }
     }
 }
 
