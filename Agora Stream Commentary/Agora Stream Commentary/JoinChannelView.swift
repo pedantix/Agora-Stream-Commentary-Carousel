@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct JoinChannelView: View {
-    @State private var channelName = ""
+    @EnvironmentObject var rtcManager: RTCManager
     @State private var isJoinable = false
-    
-    
+        
     var body: some View {
         VStack{
             Text("Agora Stream Commentary Demo")
                 .font(.title3)
                 .padding()
-            TextField("Channel Name", text: $channelName)
+            TextField("Channel Name", text: $rtcManager.channelId)
                 .textFieldStyle(.roundedBorder)
                 .frame(maxWidth: 350)
                 .padding()
-                .onChange(of: channelName) { newValue in
-                    isJoinable = !newValue.isBlank
+            NavigationLink(destination:
+                            CommentaryView()
+                .onDisappear {
+                    rtcManager.leaveChannel()
                 }
-            NavigationLink(destination: CommentaryView()) {
+                .onAppear {
+                    rtcManager.joinChannel()
+                }
+            ) {
                 Text("Join Channel")
-            }.disabled(!isJoinable)
+            }.disabled(rtcManager.channelId.isBlank)
         }
     }
 }

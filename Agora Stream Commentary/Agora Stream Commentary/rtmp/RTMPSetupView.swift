@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RTMPSetupView: View {
     @EnvironmentObject var rtmpMediaPlayer: RTMPMediaPlayer
+    @EnvironmentObject var rtcManager: RTCManager
     
     var body: some View {
         VStack {
@@ -38,6 +39,9 @@ struct RTMPSetupView: View {
             }
             Button  {
                 logger.info("start the show")
+                if let mp = rtmpMediaPlayer.mediaPlayer {
+                    rtcManager.joinChannelForMediaPlayer(mediaPlayer: mp)
+                }
             }
             label: {
                 Text("Start Feed")

@@ -5,17 +5,17 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AgoraIO/AgoraRtcEngine_iOS",
       "state" : {
-        "revision" : "b18e40c024a7393dd33f12dcdbbb780aa8ac8d76",
-        "version" : "4.1.0"
+        "branch" : "main",
+        "revision" : "13f007dff53e2c670ad645fae43e3fcea8f4df6c"
       }
     },
     {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",
-      "location" : "git@github.com:apple/swift-log.git",
+      "location" : "https://github.com/apple/swift-log",
       "state" : {
-        "revision" : "32e8d724467f8fe623624570367e3d50c5638e46",
-        "version" : "1.5.2"
+        "branch" : "main",
+        "revision" : "f79ba6a75f6d571a25bc08bcac02bf74a9459ba6"
       }
     }
   ],

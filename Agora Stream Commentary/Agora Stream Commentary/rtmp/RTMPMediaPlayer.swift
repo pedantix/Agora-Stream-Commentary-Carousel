@@ -9,6 +9,8 @@
 import AgoraRtcKit
 import Foundation
 
+private let defaultRTMPString =  "rtmp://examplepull.agoramdn.com/live/tvstuff"
+
 
 protocol RTMPMediaPlayerDependcies {
     @MainActor var engineKit: AgoraRtcEngineKit { get }
@@ -27,11 +29,12 @@ class RTMPMediaPlayer: NSObject, ObservableObject {
     @Published var isValid = false
     @Published var isInvalidEntry = false
     @Published var isValidating = false
+    @Published var isBroadcasting = true
     
     var mediaPlayer: AgoraRtcMediaPlayerProtocol?
     
     
-    @Published var rtmpString = "" {
+    @Published var rtmpString = defaultRTMPString {
         didSet {
             isValid = false
             isInvalidEntry = false
@@ -39,6 +42,11 @@ class RTMPMediaPlayer: NSObject, ObservableObject {
     }
     
     func validate() {
+        if let oldPlayer = mediaPlayer {
+            engine.destroyMediaPlayer(oldPlayer)
+            logger.info("destroying former media player")
+        }
+        
         mediaPlayer = engine.createMediaPlayer(with: self)
         let value = mediaPlayer?.open(rtmpString, startPos: 0)
         if value == 0 {
@@ -46,6 +54,10 @@ class RTMPMediaPlayer: NSObject, ObservableObject {
         } else {
             logger.info("value of open is \(value ?? 0)")
         }
+    }
+    
+    func reset() {
+        rtmpString = "rtmp://examplepull.agoramdn.com/live/tvstuff"
     }
 }
 

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct CommentaryView: View {
     // This is a placeholder for a future value
-    @State private var isRTMPFeedActive = false
+    @EnvironmentObject private var rtcManager: RTCManager
     
     var body: some View {
-        if isRTMPFeedActive {
+        if rtcManager.mediaPlayPresentInChannel {
             CommentationView()
         } else {
             RTMPSetupView()
