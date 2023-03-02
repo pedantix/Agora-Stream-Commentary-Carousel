@@ -104,10 +104,6 @@ extension RTCManager {
     
     func leaveChannel() {
         logger.info("leave channel called")
-        if let mp = mediaPlayer {
-            mp.stop()
-            engine.destroyMediaPlayer(mp)
-        }
         if let rtcConnection = rtcConnection {
             engine.leaveChannelEx(rtcConnection) { _ in
                 logger.info("Left the player channel")
@@ -128,6 +124,8 @@ extension RTCManager {
         canvas.renderMode = .hidden
         canvas.view = uiView
         if uid == myUid {
+            engine.setupLocalVideo(canvas)
+        } else if isBroadcaster && uid == RTCManager.broadcastUid {
             engine.setupLocalVideo(canvas)
         } else {
             engine.setupRemoteVideo(canvas)

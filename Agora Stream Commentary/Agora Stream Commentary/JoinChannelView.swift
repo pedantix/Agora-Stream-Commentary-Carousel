@@ -9,6 +9,7 @@ import SwiftUI
 
 struct JoinChannelView: View {
     @EnvironmentObject var rtcManager: RTCManager
+    @EnvironmentObject var rtmpMediaPlayer: RTMPMediaPlayer
     @State private var isJoinable = false
         
     var body: some View {
@@ -23,6 +24,7 @@ struct JoinChannelView: View {
             NavigationLink(destination:
                             CommentaryView()
                 .onDisappear {
+                    rtmpMediaPlayer.reset()
                     rtcManager.leaveChannel()
                 }
                 .onAppear {

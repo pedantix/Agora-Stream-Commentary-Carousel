@@ -24,15 +24,24 @@ class RTMPMediaPlayer: NSObject, ObservableObject {
         super.init()
     }
     
-    var engine: AgoraRtcEngineKit
+    private(set) var engine: AgoraRtcEngineKit
     
     @Published var isValid = false
     @Published var isInvalidEntry = false
     @Published var isValidating = false
     @Published var isBroadcasting = true
     
-    var mediaPlayer: AgoraRtcMediaPlayerProtocol?
-    
+    var mediaPlayer: AgoraRtcMediaPlayerProtocol? {
+        willSet {
+            if let oldPlayer = mediaPlayer {
+                if oldPlayer.getPlayerState() == .playing {
+                    oldPlayer.stop()
+                }
+                engine.destroyMediaPlayer(oldPlayer)
+                logger.info("destroying former media player")
+            }
+        }
+    }
     
     @Published var rtmpString = defaultRTMPString {
         didSet {
@@ -42,11 +51,6 @@ class RTMPMediaPlayer: NSObject, ObservableObject {
     }
     
     func validate() {
-        if let oldPlayer = mediaPlayer {
-            engine.destroyMediaPlayer(oldPlayer)
-            logger.info("destroying former media player")
-        }
-        
         mediaPlayer = engine.createMediaPlayer(with: self)
         let value = mediaPlayer?.open(rtmpString, startPos: 0)
         if value == 0 {
@@ -58,6 +62,7 @@ class RTMPMediaPlayer: NSObject, ObservableObject {
     
     func reset() {
         rtmpString = "rtmp://examplepull.agoramdn.com/live/tvstuff"
+        mediaPlayer = nil
     }
 }
 
