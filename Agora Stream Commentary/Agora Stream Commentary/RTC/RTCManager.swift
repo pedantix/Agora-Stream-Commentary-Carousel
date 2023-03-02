@@ -119,17 +119,36 @@ extension RTCManager {
 
 extension RTCManager {
     func setupCanvasFor(_ uiView: UIView, _ uid: UInt) {
+        if isBroadcaster && uid == RTCManager.broadcastUid {
+            setupMediaPlayer(uiView)
+        } else {
+            setupUserView(uiView, uid)
+        }
+    }
+    
+    private func setupUserView(_ uiView: UIView, _ uid: UInt) {
         let canvas = AgoraRtcVideoCanvas()
         canvas.uid = uid
         canvas.renderMode = .hidden
+        canvas.mirrorMode = .auto
         canvas.view = uiView
         if uid == myUid {
-            engine.setupLocalVideo(canvas)
-        } else if isBroadcaster && uid == RTCManager.broadcastUid {
             engine.setupLocalVideo(canvas)
         } else {
             engine.setupRemoteVideo(canvas)
         }
+    }
+    
+    
+    private func setupMediaPlayer(_ uiView: UIView) {
+        engine.enableVideo()
+        let canvas = AgoraRtcVideoCanvas()
+        canvas.renderMode = .hidden
+        canvas.mirrorMode = .auto
+        canvas.view = uiView
+        canvas.sourceType = .mediaPlayer
+        canvas.mediaPlayerId = mediaPlayer?.getMediaPlayerId() ?? 0
+        engine.setupLocalVideo(canvas)
     }
 }
 
