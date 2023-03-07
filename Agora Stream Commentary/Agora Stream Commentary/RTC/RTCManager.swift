@@ -104,10 +104,6 @@ extension RTCManager {
     
     func leaveChannel() {
         logger.info("leave channel called")
-        if let mp = mediaPlayer {
-            mp.stop()
-            engine.destroyMediaPlayer(mp)
-        }
         if let rtcConnection = rtcConnection {
             engine.leaveChannelEx(rtcConnection) { _ in
                 logger.info("Left the player channel")
@@ -123,15 +119,36 @@ extension RTCManager {
 
 extension RTCManager {
     func setupCanvasFor(_ uiView: UIView, _ uid: UInt) {
+        if isBroadcaster && uid == RTCManager.broadcastUid {
+            setupMediaPlayer(uiView)
+        } else {
+            setupUserView(uiView, uid)
+        }
+    }
+    
+    private func setupUserView(_ uiView: UIView, _ uid: UInt) {
         let canvas = AgoraRtcVideoCanvas()
         canvas.uid = uid
         canvas.renderMode = .hidden
+        canvas.mirrorMode = .auto
         canvas.view = uiView
         if uid == myUid {
             engine.setupLocalVideo(canvas)
         } else {
             engine.setupRemoteVideo(canvas)
         }
+    }
+    
+    
+    private func setupMediaPlayer(_ uiView: UIView) {
+        engine.enableVideo()
+        let canvas = AgoraRtcVideoCanvas()
+        canvas.renderMode = .hidden
+        canvas.mirrorMode = .auto
+        canvas.view = uiView
+        canvas.sourceType = .mediaPlayer
+        canvas.mediaPlayerId = mediaPlayer?.getMediaPlayerId() ?? 0
+        engine.setupLocalVideo(canvas)
     }
 }
 
