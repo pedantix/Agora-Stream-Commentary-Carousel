@@ -29,8 +29,8 @@
 		288DB33029AEE27200F31262 /* SpatialAudio in Frameworks */ = {isa = PBXBuildFile; productRef = 288DB32F29AEE27200F31262 /* SpatialAudio */; };
 		288DB33229AEE27200F31262 /* VQA in Frameworks */ = {isa = PBXBuildFile; productRef = 288DB33129AEE27200F31262 /* VQA */; };
 		288DB33429AEE27200F31262 /* VirtualBackground in Frameworks */ = {isa = PBXBuildFile; productRef = 288DB33329AEE27200F31262 /* VirtualBackground */; };
-		288DB33729AEE2A400F31262 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 288DB33629AEE2A400F31262 /* Logging */; };
 		288DB33C29B0094300F31262 /* RTCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288DB33B29B0094200F31262 /* RTCView.swift */; };
+		288DB34629B8DAC300F31262 /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 288DB34529B8DAC300F31262 /* Logging */; };
 		28BB588D2992F8060072A066 /* Agora_Stream_CommentaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB588C2992F8060072A066 /* Agora_Stream_CommentaryApp.swift */; };
 		28BB588F2992F8060072A066 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28BB588E2992F8060072A066 /* ContentView.swift */; };
 		28BB58912992F8070072A066 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28BB58902992F8070072A066 /* Assets.xcassets */; };
@@ -73,7 +73,7 @@
 				288DB31E29AEE27200F31262 /* AIAEC in Frameworks */,
 				288DB32429AEE27200F31262 /* ClearVision in Frameworks */,
 				288DB33429AEE27200F31262 /* VirtualBackground in Frameworks */,
-				288DB33729AEE2A400F31262 /* Logging in Frameworks */,
+				288DB34629B8DAC300F31262 /* Logging in Frameworks */,
 				288DB32C29AEE27200F31262 /* ReplayKit in Frameworks */,
 				288DB33029AEE27200F31262 /* SpatialAudio in Frameworks */,
 				288DB32029AEE27200F31262 /* AINS in Frameworks */,
@@ -185,7 +185,7 @@
 				288DB32F29AEE27200F31262 /* SpatialAudio */,
 				288DB33129AEE27200F31262 /* VQA */,
 				288DB33329AEE27200F31262 /* VirtualBackground */,
-				288DB33629AEE2A400F31262 /* Logging */,
+				288DB34529B8DAC300F31262 /* Logging */,
 			);
 			productName = "Agora Stream Commentary";
 			productReference = 28BB58892992F8060072A066 /* Agora Stream Commentary.app */;
@@ -217,7 +217,7 @@
 			mainGroup = 28BB58802992F8050072A066;
 			packageReferences = (
 				288DB31C29AEE27200F31262 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */,
-				288DB33529AEE2A400F31262 /* XCRemoteSwiftPackageReference "swift-log" */,
+				288DB34429B8DAC300F31262 /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 28BB588A2992F8060072A066 /* Products */;
 			projectDirPath = "";
@@ -488,9 +488,9 @@
 				kind = branch;
 			};
 		};
-		288DB33529AEE2A400F31262 /* XCRemoteSwiftPackageReference "swift-log" */ = {
+		288DB34429B8DAC300F31262 /* XCRemoteSwiftPackageReference "swift-log" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "git@github.com:apple/swift-log.git";
+			repositoryURL = "https://github.com/apple/swift-log";
 			requirement = {
 				branch = main;
 				kind = branch;
@@ -559,9 +559,9 @@
 			package = 288DB31C29AEE27200F31262 /* XCRemoteSwiftPackageReference "AgoraRtcEngine_iOS" */;
 			productName = VirtualBackground;
 		};
-		288DB33629AEE2A400F31262 /* Logging */ = {
+		288DB34529B8DAC300F31262 /* Logging */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 288DB33529AEE2A400F31262 /* XCRemoteSwiftPackageReference "swift-log" */;
+			package = 288DB34429B8DAC300F31262 /* XCRemoteSwiftPackageReference "swift-log" */;
 			productName = Logging;
 		};
 /* End XCSwiftPackageProductDependency section */

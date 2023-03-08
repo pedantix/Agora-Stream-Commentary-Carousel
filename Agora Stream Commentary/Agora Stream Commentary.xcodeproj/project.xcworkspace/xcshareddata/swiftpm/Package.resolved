@@ -12,7 +12,7 @@
     {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/apple/swift-log",
+      "location" : "git@github.com:apple/swift-log.git",
       "state" : {
         "branch" : "main",
         "revision" : "f79ba6a75f6d571a25bc08bcac02bf74a9459ba6"
